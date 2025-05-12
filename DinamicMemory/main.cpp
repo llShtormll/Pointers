@@ -13,11 +13,11 @@ int* pop_back(int arr[], int& size);
 int* erase(int arr[], int& size, int index);
 
 #define tab "\t"
-//#define STATICS_ARRYAS
+#define STATIX_ARRYAS
 void main()
 {
 	setlocale(LC_ALL, "RU");
-#ifdef STATICS_ARRYAS
+#ifdef STATIX_ARRYAS
 	int size;
 	cout << "Введие количество элементов масива :"; cin >> size;
 	int* arr = new int[size];
@@ -35,8 +35,8 @@ void main()
 	Print(arr, size);
 	arr = erase(arr, size, 2);
 	Print(arr, size);
-#endif // STATICS_ARRYAS
-	int rows;
+#endif // STATIX_ARRYAS
+	/*int rows;
 	int cols;
 	cout << "Введите количество строк :"; cin >> rows;
 	cout << "\nВведие количество элементов строки :"; cin >> cols;
@@ -44,7 +44,7 @@ void main()
 	for (int i = 0; i < rows; i++)
 	{
 		arr[i] = new int[cols];
-	}
+	}*/
 
 }
 
