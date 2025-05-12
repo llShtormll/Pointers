@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 
 using namespace std;
 void FillRand(int arr[], int size);
@@ -19,7 +19,7 @@ void main()
 	setlocale(LC_ALL, "RU");
 #ifdef STATIX_ARRYAS
 	int size;
-	cout << "Ââåäèå êîëè÷åñòâî ýëåìåíòîâ ìàñèâà :"; cin >> size;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÐ¸Ð²Ð° :"; cin >> size;
 	int* arr = new int[size];
 	FillRand(arr, size);
 	Print(arr, size);
@@ -38,8 +38,8 @@ void main()
 #endif // STATIX_ARRYAS
 	/*int rows;
 	int cols;
-	cout << "Ââåäèòå êîëè÷åñòâî ñòðîê :"; cin >> rows;
-	cout << "\nÂâåäèå êîëè÷åñòâî ýëåìåíòîâ ñòðîêè :"; cin >> cols;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÑ‚Ñ€Ð¾Ðº :"; cin >> rows;
+	cout << "\nÐ’Ð²ÐµÐ´Ð¸Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² ÑÑ‚Ñ€Ð¾ÐºÐ¸ :"; cin >> cols;
 	int** arr = new int* [rows];
 	for (int i = 0; i < rows; i++)
 	{
