@@ -65,21 +65,20 @@ void main()
 	double** arr;
 	cout << "Введите количество строк :"; cin >> rows;
 	cout << "\nВведие количество элементов строки :"; cin >> cols;
-
 	Allocate(arr, rows, cols);
 	FillRand(arr, rows, cols);
 	Print(arr, rows, cols);
-	//Print(arr = push_row_front(arr, rows, cols), rows, cols);
-	//Print(arr = push_row_back(arr, rows, cols), rows, cols);
-	//Print(arr = insert_row(arr, rows, cols, index), rows, cols);
-	//Print(arr = push_col_front(arr, rows, cols), rows, cols);
-	//Print(arr = push_col_back(arr, rows, cols), rows, cols);
-	//Print(arr = insert_col(arr, rows, cols, index), rows, cols);
-	//Print(arr = pop_row_front(arr, rows, cols), rows, cols);
-	//Print(arr = pop_row_back(arr, rows, cols), rows, cols);
-	//Print(arr = erase_row(arr, rows, cols, index), rows, cols);
-	//Print(arr = pop_col_front(arr, rows, cols), rows, cols);
-	//Print(arr = pop_col_back(arr, rows, cols), rows, cols);
+	Print(arr = push_row_front(arr, rows, cols), rows, cols);
+	Print(arr = push_row_back(arr, rows, cols), rows, cols);
+	Print(arr = insert_row(arr, rows, cols, index), rows, cols);
+	Print(arr = push_col_front(arr, rows, cols), rows, cols);
+	Print(arr = push_col_back(arr, rows, cols), rows, cols);
+	Print(arr = insert_col(arr, rows, cols, index), rows, cols);
+	Print(arr = pop_row_front(arr, rows, cols), rows, cols);
+	Print(arr = pop_row_back(arr, rows, cols), rows, cols);
+	Print(arr = erase_row(arr, rows, cols, index), rows, cols);
+	Print(arr = pop_col_front(arr, rows, cols), rows, cols);
+	Print(arr = pop_col_back(arr, rows, cols), rows, cols);
 	Print(arr = erase_col(arr, rows, cols, index), rows, cols);
 	Clear(arr, rows);
 #endif // DINAMYC_ARRYAS
@@ -152,14 +151,13 @@ template <typename T> T* push_front(T arr[], int& size, const T value)
 }
 template <typename T> T* push_back(T arr[], int& size, const T value)
 {
-	T* buffer = new T[size + 1];
-	for (int i = 0; i < size; i++)
+	T* buffer = new T[++size];
+	for (int i = 0; i < size - 1; i++)
 	{
 		buffer[i] = arr[i];
 	}
 	delete[] arr;
 	buffer[size] = value;
-	size++;
 	return buffer;
 }
 template <typename T> T* insert(T arr[], int& size, const T value, int index)
@@ -219,14 +217,13 @@ template <typename T> T* erase(T arr[], int& size, int index)
 
 template <typename T> T** push_row_front(T** arr, int& rows, const int cols)
 {
-	T** buffer = new T* [rows + 1];
-	for (int i = 0; i < rows; i++)
+	T** buffer = new T* [++rows];
+	for (int i = 0; i < rows - 1; i++)
 	{
 		buffer[i + 1] = arr[i];
 	}
 	delete[] arr;
 	buffer[0] = new T[cols] {};
-	rows++;
 	return buffer;
 }
 template <typename T> T** push_row_back(T** arr, int& rows, const int cols)
@@ -360,16 +357,15 @@ template <typename T> T** erase_row(T** arr, int& rows, const int cols, int inde
 template <typename T> T** pop_col_front(T** arr, const int rows, int& cols)
 {
 	T** buffer;
-	Allocate(buffer, rows, cols - 1);
+	Allocate(buffer, rows, --cols);
 	for (int i = 0; i < rows; i++)
 	{
-		for (int j = 1; j < cols; j++)
+		for (int j = 0; j < cols; j++)
 		{
-			buffer[i][j - 1] = arr[i][j];
+			buffer[i][j] = arr[i][j + 1];
 		}
 	}
 	Clear(arr, rows);
-	cols--;
 	return buffer;
 }
 template <typename T> T** pop_col_back(T** arr, const int rows, int& cols)
