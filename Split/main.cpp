@@ -9,7 +9,7 @@ void main()
 	int odd = 0;
 	int n = 10;
 	int* arr_even = new int[even];
-	int* arr_odd = new int[add];
+	int* arr_odd = new int[odd];
 	int* arr = new int[n];
 	for (int i = 0; i < n; i++)
 	{
@@ -26,6 +26,6 @@ void main()
 	}
 	for (int i = 0; i < n; i++)
 	{
-		if()
+		
 	}
 }
