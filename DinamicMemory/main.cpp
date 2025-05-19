@@ -38,7 +38,7 @@ template <typename T> void Allocate(T** &arr, const int rows, const int cols);
 template <typename T> void Clear(T** &arr, const int rows);
 
 #define tab "\t"
-//#define STATIX_ARRYAS
+#define STATIX_ARRYAS
 #define DINAMYC_ARRYAS
 void main()
 {
@@ -61,24 +61,25 @@ void main()
 #ifdef DINAMYC_ARRYAS
 	int rows;
 	int cols;
-	int index = 2;
-	double** arr;
+	int i_index_2 = 2;
+	double** i_arr_2;
 	cout << "Введите количество строк :"; cin >> rows;
 	cout << "\nВведие количество элементов строки :"; cin >> cols;
+
 	Allocate(arr, rows, cols);
 	FillRand(arr, rows, cols);
 	Print(arr, rows, cols);
-	Print(arr = push_row_front(arr, rows, cols), rows, cols);
-	Print(arr = push_row_back(arr, rows, cols), rows, cols);
-	Print(arr = insert_row(arr, rows, cols, index), rows, cols);
-	Print(arr = push_col_front(arr, rows, cols), rows, cols);
-	Print(arr = push_col_back(arr, rows, cols), rows, cols);
-	Print(arr = insert_col(arr, rows, cols, index), rows, cols);
-	Print(arr = pop_row_front(arr, rows, cols), rows, cols);
-	Print(arr = pop_row_back(arr, rows, cols), rows, cols);
-	Print(arr = erase_row(arr, rows, cols, index), rows, cols);
-	Print(arr = pop_col_front(arr, rows, cols), rows, cols);
-	Print(arr = pop_col_back(arr, rows, cols), rows, cols);
+	//Print(arr = push_row_front(arr, rows, cols), rows, cols);
+	//Print(arr = push_row_back(arr, rows, cols), rows, cols);
+	//Print(arr = insert_row(arr, rows, cols, index), rows, cols);
+	//Print(arr = push_col_front(arr, rows, cols), rows, cols);
+	//Print(arr = push_col_back(arr, rows, cols), rows, cols);
+	//Print(arr = insert_col(arr, rows, cols, index), rows, cols);
+	//Print(arr = pop_row_front(arr, rows, cols), rows, cols);
+	//Print(arr = pop_row_back(arr, rows, cols), rows, cols);
+	//Print(arr = erase_row(arr, rows, cols, index), rows, cols);
+	//Print(arr = pop_col_front(arr, rows, cols), rows, cols);
+	//Print(arr = pop_col_back(arr, rows, cols), rows, cols);
 	Print(arr = erase_col(arr, rows, cols, index), rows, cols);
 	Clear(arr, rows);
 #endif // DINAMYC_ARRYAS
