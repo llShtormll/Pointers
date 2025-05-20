@@ -71,7 +71,8 @@ void FillRand(int** arr, const int rows, const int cols){
 	{
 		for (int j = 0; j < cols; j++)arr[i][j] = rand() % 100;
 	}
-}void FillRand(double** arr, const int rows, const int cols){
+}
+void FillRand(double** arr, const int rows, const int cols){
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++) { arr[i][j] = rand(); arr[i][j] /= 100; }
