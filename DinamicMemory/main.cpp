@@ -190,13 +190,11 @@ template <typename T> void pop_col_f_e_b(T** arr, const int rows, int& cols, int
 		arr[i] = buffer;
 	}
 }
-template <typename T> void Allocate(T** &arr, const int rows, const int cols)
-{
+template <typename T> void Allocate(T** &arr, const int rows, const int cols){
 	arr = new T* [rows];
 	for (int i = 0; i < rows; i++)arr[i] = new T[cols];
 }
-template <typename T> void Clear(T** &arr, const int rows)
-{
+template <typename T> void Clear(T** &arr, const int rows){
 	for (int i = 0; i < rows; i++)delete[] arr[i];
 	delete arr;
 }
