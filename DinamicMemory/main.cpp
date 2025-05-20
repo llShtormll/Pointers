@@ -23,8 +23,8 @@ template <typename T> void Allocate(T** &arr, const int rows, const int cols);
 template <typename T> void Clear(T** &arr, const int rows);
 
 #define tab "\t"
-#define STATIX_ARRYAS
-//#define DINAMYC_ARRYAS
+//#define STATIX_ARRYAS
+#define DINAMYC_ARRYAS
 void main()
 {
 	setlocale(LC_ALL, "RU");
@@ -37,7 +37,7 @@ void main()
 	FillRand(arr, size);
 	Print(arr, size);
 	Print(arr = push_f_i_b(arr, size, volue, index), size);
-	//Print(arr = pop_f_e_b(arr, size, index), size);
+	Print(arr = pop_f_e_b(arr, size, index), size);
 #endif // STATIX_ARRYAS
 #ifdef DINAMYC_ARRYAS
 	int rows;
@@ -52,9 +52,9 @@ void main()
 	Print(i_arr_2 = push_row_f_i_b(i_arr_2, rows, cols, i_index_2), rows, cols);
 	push_col_f_i_b(i_arr_2, rows, cols, i_index_2);
 	Print(i_arr_2, rows, cols);
-	//Print(i_arr_2 = pop_row_f_e_b(i_arr_2, rows, cols, i_index_2), rows, cols);
-	/*pop_col_f_e_b(i_arr_2, rows, cols, i_index_2);
-	Print(i_arr_2, rows, cols);*/
+	Print(i_arr_2 = pop_row_f_e_b(i_arr_2, rows, cols, i_index_2), rows, cols);
+	pop_col_f_e_b(i_arr_2, rows, cols, i_index_2);
+	Print(i_arr_2, rows, cols);
 	Clear(i_arr_2, rows);
 #endif // DINAMYC_ARRYAS
 
