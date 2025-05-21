@@ -23,7 +23,7 @@ template <typename T> void Allocate(T** &arr, const int rows, const int cols);
 template <typename T> void Clear(T** &arr, const int rows);
 
 #define tab "\t"
-//#define STATIX_ARRYAS
+#define STATIX_ARRYAS
 #define DINAMYC_ARRYAS
 void main()
 {
