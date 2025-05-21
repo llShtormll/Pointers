@@ -113,11 +113,9 @@ template <typename T> T* pop_f_e_b(T* arr, int& size, int index, int k){
 	T* buffer = new T[--size];
 	switch (k)
 	{
-	case 0:for (int i = 0; i <= size; i++)buffer[i] = arr[i + 1];
-		break;
+	case 0:for (int i = 0; i <= size; i++)buffer[i] = arr[i + 1];break;
 	case 1:for (int i = 0; i < index; i++)buffer[i] = arr[i];
-		  for (int i = index; i <= size; i++)buffer[i] = arr[i + 1];
-		  break;
+		  for (int i = index; i <= size; i++)buffer[i] = arr[i + 1]; break;
 	case 2:for (int i = 0; i < size; i++)buffer[i] = arr[i];
 	}delete[] arr;
 	return buffer;
