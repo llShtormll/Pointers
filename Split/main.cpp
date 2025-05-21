@@ -1,31 +1,43 @@
 #include<iostream>
 
-
 using namespace std;
+
+void FillRand(int arr[], const int n);
+void Print(int arr[], const int n);
 
 void main()
 {
-	int even = 0;
-	int odd = 0;
-	int n = 10;
-	int* arr_even = new int[even];
-	int* arr_odd = new int[odd];
-	int* arr = new int[n];
+	setlocale(LC_ALL, " ");
+	const int n = 10;
+	int even_const = 0;
+	int odd_const = 0;
+	int arr[n];
+	FillRand(arr, n);
+	Print(arr, n);
 	for (int i = 0; i < n; i++)
 	{
-		arr[i] = rand() % 100;
+		(arr[i] % 2 == 0 ? even_const : odd_const)++;
 	}
-	for (int i = 0; i < n; i++)
+
+	int* arr_even = new int[even_const];
+	int* arr_odd = new int[odd_const];
+
+
+	for (int i = 0, j = 0, k = 0; i < n; i++)
 	{
-		cout << arr[i] << "\t";
+		(arr[i] % 2 == 0 ? arr_even[j++] : arr_odd[k++]) = arr[i];
 	}
-	for (int i = 0; i < n; i++)
-	{
-		if (i % 2 == 0)even++;
-		else odd++;
-	}
-	for (int i = 0; i < n; i++)
-	{
-		
-	}
+	Print(arr_even, even_const);
+	Print(arr_odd, odd_const);
+
+}
+
+void FillRand(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)arr[i] = rand() % 100;
+}
+void Print(int arr[], const int n)
+{
+	for (int i = 0; i < n; i++)cout << arr[i] << '\t';
+cout << endl;
 }
